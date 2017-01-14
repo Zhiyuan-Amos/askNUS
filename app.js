@@ -28,6 +28,7 @@ var intents = new builder.IntentDialog({recognizers:[recogniser]});
 intents.matches(/\b(hi|hello|hey)\b/i, '/sayHi');
 intents.matches('getNews', '/giveUserNews');
 intents.matches('analyzeObject', '/giveAnalysis');
+intents.matches('nusCorsBidding', '/corsBidding');
 intents.onDefault('/feelingLucky');
 
 //=========================================================
@@ -57,9 +58,17 @@ bot.dialog('/giveAnalysis', [
         session.endDialog("???????????");    
     }
 ])
+bot.dialog('/corsBidding', [
+    function (session) {
+        builder.Prompts.text(session, "Bid bid bid :D" + " crazerk.blogspot.sg" +
+        " may be relevant to you: ");
+    }
+])
 bot.dialog('/feelingLucky', [
     function (session) {
         builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think this" +
-        " may be relevant to you: url");
+        " may be relevant to you: ");
     }
 ])
+
+
