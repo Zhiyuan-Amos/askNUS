@@ -4,7 +4,7 @@
   "description": "Lin Han is bored",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "Lin Han",
   "license": "ISC",
