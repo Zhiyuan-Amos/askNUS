@@ -57,7 +57,7 @@ bot.dialog('/nusShuttleBusToTake', [
 bot.dialog('/feelingLucky', [
     function (session) {
         builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think this" +
-        " may be relevant to you: " + session.message.text);
+        " may be relevant to you: http://www.google.com/search?q=" + session.message.text + "&btnI");
     }
 ])
 
