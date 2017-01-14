@@ -1,6 +1,7 @@
 // Reference the packages we require so that we can use them in creating the bot
 var restify = require('restify');
 var builder = require('botbuilder');
+var google = require('google');
 
 //=========================================================
 // Bot Setup
@@ -58,8 +59,24 @@ bot.dialog('/giveAnalysis', [
     }
 ])
 bot.dialog('/feelingLucky', [
-    function (session) {
+    function (session, results) {
         builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think this" +
-        " may be relevant to you: url");
+        " may be relevant to you: " + results);
     }
 ])
+
+
+google('node.js best practices', function (err, res) {
+  if (err) console.error(err)
+
+  for (var i = 0; i < res.links.length; ++i) {
+    var link = res.links[i];
+    console.log(link.title + ' - ' + link.href)
+    console.log(link.description + "\n")
+  }
+
+  if (nextCounter < 4) {
+    nextCounter += 1
+    if (res.next) res.next()
+  }
+})
