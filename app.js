@@ -27,6 +27,7 @@ var recogniser = new builder.LuisRecognizer(LuisModelUrl);
 var intents = new builder.IntentDialog({recognizers:[recogniser]});
 intents.matches('askNusGreetingHelp', '/askNusGreetingHelp');
 intents.matches('nusCorsBidding', '/corsBidding');
+intents.matches('nusShuttleBusToTake', '/nusShuttleBusToTake');
 intents.onDefault('/feelingLucky');
 
 //=========================================================
@@ -48,10 +49,15 @@ bot.dialog('/corsBidding', [
         + "[What is CORS?](http://muggingsg.com/university/understanding-nus-cors)");
     }
 ])
+bot.dialog('/nusShuttleBusToTake', [
+    function (session) {
+        builder.Prompts.text(session, "BUSSS");
+    }
+])
 bot.dialog('/feelingLucky', [
     function (session) {
         builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think this" +
-        " may be relevant to you: ");
+        " may be relevant to you: " + session.message.text);
     }
 ])
 
