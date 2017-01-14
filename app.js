@@ -32,6 +32,9 @@ intents.onDefault('/feelingLucky');
 //=========================================================
 // Bots Dialogs
 //=========================================================
+var websiteOne = "Crazerk".link("crazerk.blogspot.sg");
+var websiteTwo = "Life NUS Student".link("life-of-a-nus-computing-student.blogspot.com");
+var websiteThree = "Mug and mug".link("muggingsg.com");
 
 // This is called the root dialog. It is the first point of entry for any message the bot receives
 bot.dialog('/', intents);
@@ -43,10 +46,11 @@ bot.dialog('/sayHi', [
     }
 ])
 bot.dialog('/corsBidding', [
+    
+
     function (session) {
-        builder.Prompts.text(session, "Bid bid bid :D" + " <a href="crazerk.blogspot.sg">Crazerk</a>" +
-        ", <a href="life-of-a-nus-computing-student.blogspot.com">Life NUS Student</a>" +
-        + ", <a href="muggingsg.com">Mug and mug</a>");
+        builder.Prompts.text(session, "Bid bid bid :D " + websiteOne 
+        + " " + websiteTwo + " " + websiteThree);
     }
 ])
 bot.dialog('/feelingLucky', [
