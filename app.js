@@ -33,7 +33,7 @@ intents.onDefault('/feelingLucky');
 // Bots Dialogs
 //=========================================================
 var websiteOne = "Crazerk";
-websiteOne.href = crazerk.blogspot.sg
+websiteOne.href = "crazerk.blogspot.sg"
 
 // This is called the root dialog. It is the first point of entry for any message the bot receives
 bot.dialog('/', intents);
