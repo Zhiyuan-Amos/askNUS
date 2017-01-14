@@ -44,7 +44,7 @@ bot.dialog('/askNusGreetingHelp', [
 ])
 bot.dialog('/corsBidding', [
     function (session) {
-        builder.Prompts.text(session, "Need help for bidding? Here's some blogs that you can refer to!<br>" 
+        session.endDialog("Need help for bidding? Here's some blogs that you can refer to!<br>" 
         + "[Bidding for dummies like you :>](http://crazerk.blogspot.sg/2013/06/cors-guide-bidding-for-dummies.html?m=1)<br>"
         + "[Tips for freshmen like you :>](http://blog.nusmods.com/tips-for-freshmen-by-nuswhispers)<br>"
         + "[What is CORS?](http://muggingsg.com/university/understanding-nus-cors)");
@@ -52,18 +52,18 @@ bot.dialog('/corsBidding', [
 ])
 bot.dialog('/nusShuttleBusToTake', [
     function (session) {
-        builder.Prompts.text(session, "Going from UTown to Kent Ridge MRT? Take bus D2!");
+        session.endDialog("Going from UTown to Kent Ridge MRT? Take bus D2!");
     }
 ])
 bot.dialog('/nusBusTiming', [
     function (session) {
-        builder.Prompts.text(session, "Bus timings at Utown: D1 in 5 minutes, D2 in 8 minutes.");
+        session.endDialog("Bus timings at Utown: D1 in 5 minutes, D2 in 8 minutes.");
     }
 ])
 bot.dialog('/feelingLucky', [
     function (session) {
         var website = "http://www.google.com/search?q=" + session.message.text.replace("\\s+", "+") + "&btnI";
-        builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think [this](" + website + ")" +
+        session.endDialog("Sorry we do not understand what you are saying! D: We think [this](" + website + ")" +
         " may be relevant to you");
     }
 ])
