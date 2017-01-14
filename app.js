@@ -39,8 +39,8 @@ bot.dialog('/', intents);
 bot.dialog('/askNusGreetingHelp', [
     function (session) {
         builder.Prompts.text(session, "Hi there! How can I help you? For example, if you want to find out more about CORS bidding, "
-        + "type in 'CORS' or 'bid'. If you want to find out about how to get to somewhere in NUS,");
-    }
+        + "type in 'CORS' or 'bid'. If you want to find out about how to get to somewhere in NUS, type 'going from X to Y'");
+    }, function(session, result) {}
 ])
 bot.dialog('/corsBidding', [
     function (session) {
