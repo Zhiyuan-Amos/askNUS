@@ -56,7 +56,7 @@ bot.dialog('/nusShuttleBusToTake', [
 ])
 bot.dialog('/feelingLucky', [
     function (session) {
-        var website = "http://www.google.com/search?q=" + session.message.text.replace("\\s+", "+") + "&btnI";
+        var website = "http://www.google.com/search?q=" + session.message.text + "&btnI";
         builder.Prompts.text(session, "Sorry we do not understand what you are saying! D: We think this" +
         " may be relevant to you: [You feeling lucky bro?](%(website)s)");
     }
