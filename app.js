@@ -44,8 +44,9 @@ bot.dialog('/sayHi', [
 ])
 bot.dialog('/corsBidding', [
     function (session) {
-        builder.Prompts.text(session, "Bid bid bid :D" + " crazerk.blogspot.sg" +
-        ", life-of-a-nus-computing-student.blogspot.com" + ", muggingsg.com");
+        builder.Prompts.text(session, "Bid bid bid :D" + " <a href="crazerk.blogspot.sg">Crazerk</a>" +
+        ", <a href="life-of-a-nus-computing-student.blogspot.com">Life NUS Student</a>" +
+        + ", <a href="muggingsg.com">Mug and mug</a>");
     }
 ])
 bot.dialog('/feelingLucky', [
