@@ -32,9 +32,6 @@ intents.onDefault('/feelingLucky');
 //=========================================================
 // Bots Dialogs
 //=========================================================
-var websiteOne = "Crazerk";
-websiteOne.href = "http://crazerk.blogspot.sg"
-
 // This is called the root dialog. It is the first point of entry for any message the bot receives
 bot.dialog('/', intents);
 bot.dialog('/sayHi', [
@@ -46,7 +43,10 @@ bot.dialog('/sayHi', [
 ])
 bot.dialog('/corsBidding', [
     function (session) {
-        builder.Prompts.text(session, "Bid bid bid :D " + '[crazerk](http://crazerk.blogspot.sg)');
+        builder.Prompts.text(session, "Need help for bidding? Here's some blogs that you can refer to!\n" 
+        + "[Bidding for dummies](http://crazerk.blogspot.sg/2013/06/cors-guide-bidding-for-dummies.html?m=1)\n")
+        + "[Tips for freshmen](http://blog.nusmods.com/tips-for-freshmen-by-nuswhispers)\n"
+        + "[What is CORS?](http://muggingsg.com/university/understanding-nus-cors)";
     }
 ])
 bot.dialog('/feelingLucky', [
