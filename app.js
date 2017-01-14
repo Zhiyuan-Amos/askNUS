@@ -28,7 +28,7 @@ var intents = new builder.IntentDialog({recognizers:[recogniser]});
 intents.matches(/\b(hi|hello|hey)\b/i, '/sayHi');
 intents.matches('getNews', '/giveUserNews');
 intents.matches('analyzeObject', '/giveAnalysis');
-intents.onDefault(builder.DialogAction.send("Apa ini la dey"));
+intents.onDefault('/feelingLucky');
 
 //=========================================================
 // Bots Dialogs
