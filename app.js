@@ -28,6 +28,7 @@ var intents = new builder.IntentDialog({recognizers:[recogniser]});
 intents.matches('askNusGreetingHelp', '/askNusGreetingHelp');
 intents.matches('nusCorsBidding', '/corsBidding');
 intents.matches('nusShuttleBusToTake', '/nusShuttleBusToTake');
+intents.matches('nusBusTiming', '/nusBusTiming');
 intents.onDefault('/feelingLucky');
 
 //=========================================================
@@ -37,8 +38,8 @@ intents.onDefault('/feelingLucky');
 bot.dialog('/', intents);
 bot.dialog('/askNusGreetingHelp', [
     function (session) {
-        builder.Prompts.text(session, "Hi there! Looking for help about NUS? Feel free to ask me anything: "
-        + "Cors Bidding, How to get to a location in NUS");
+        builder.Prompts.text(session, "Hi there! How can I help you? For example, if you want to find out more about CORS bidding, "
+        + "type in 'CORS' or 'bid'. If you want to find out about how to get to somewhere in NUS,");
     }
 ])
 bot.dialog('/corsBidding', [
@@ -51,7 +52,12 @@ bot.dialog('/corsBidding', [
 ])
 bot.dialog('/nusShuttleBusToTake', [
     function (session) {
-        builder.Prompts.text(session, "BUSSS");
+        builder.Prompts.text(session, "Going from UTown to Kent Ridge MRT? Take bus D2!");
+    }
+])
+bot.dialog('/nusBusTiming', [
+    function (session) {
+        builder.Prompts.text(session, "Bus timings at Utown: D1 in 5 minutes, D2 in 8 minutes.");
     }
 ])
 bot.dialog('/feelingLucky', [
