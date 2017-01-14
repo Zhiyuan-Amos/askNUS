@@ -46,7 +46,7 @@ bot.dialog('/sayHi', [
 ])
 bot.dialog('/corsBidding', [
     function (session) {
-builder.Prompts.text(session, "Bid bid bid :D " + [crazerk](http://crazerk.blogspot.sg);
+        builder.Prompts.text(session, "Bid bid bid :D " + '[crazerk](http://crazerk.blogspot.sg)');
     }
 ])
 bot.dialog('/feelingLucky', [
