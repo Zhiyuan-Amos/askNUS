@@ -43,9 +43,9 @@ bot.dialog('/sayHi', [
 ])
 bot.dialog('/corsBidding', [
     function (session) {
-        builder.Prompts.text(session, "Need help for bidding? Here's some blogs that you can refer to!\n" 
-        + "[Bidding for dummies](http://crazerk.blogspot.sg/2013/06/cors-guide-bidding-for-dummies.html?m=1)\n"
-        + "[Tips for freshmen](http://blog.nusmods.com/tips-for-freshmen-by-nuswhispers)\n"
+        builder.Prompts.text(session, "Need help for bidding? Here's some blogs that you can refer to!<br>" 
+        + "[Bidding for dummies](http://crazerk.blogspot.sg/2013/06/cors-guide-bidding-for-dummies.html?m=1)<br>"
+        + "[Tips for freshmen](http://blog.nusmods.com/tips-for-freshmen-by-nuswhispers)<br>"
         + "[What is CORS?](http://muggingsg.com/university/understanding-nus-cors)");
     }
 ])
