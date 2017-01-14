@@ -25,7 +25,7 @@ server.post('/api/messages', connector.listen());
 const LuisModelUrl = "https://api.projectoxford.ai/luis/v2.0/apps/ceb80200-3d4a-468d-9f15-3b0e43cc9cc6?subscription-key=e06c0f90af8b493692aeb9c6dbbc24fb&verbose=true";
 var recogniser = new builder.LuisRecognizer(LuisModelUrl);
 var intents = new builder.IntentDialog({recognizers:[recogniser]});
-intents.matches(/\b(hi|hello|hey)\b/i, '/sayHi');
+intents.matches('askNusGreetingHelp', '/askNusGreetingHelp');
 intents.matches('nusCorsBidding', '/corsBidding');
 intents.onDefault('/feelingLucky');
 
@@ -34,11 +34,10 @@ intents.onDefault('/feelingLucky');
 //=========================================================
 // This is called the root dialog. It is the first point of entry for any message the bot receives
 bot.dialog('/', intents);
-bot.dialog('/sayHi', [
+bot.dialog('/askNusGreetingHelp', [
     function (session) {
-        builder.Prompts.text(session, "Hi there");
-    }, function(session, results) {
-        session.endDialog("OHHHHHHH");    
+        builder.Prompts.text(session, "Hi there! Looking for help about NUS? Feel free to ask me anything: "
+        + "Cors Bidding, How to get to a location in NUS");
     }
 ])
 bot.dialog('/corsBidding', [
